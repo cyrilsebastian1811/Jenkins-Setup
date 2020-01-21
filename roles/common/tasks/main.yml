@@ -1,0 +1,101 @@
+---
+- name: create VPC
+  ec2_vpc_net:
+    name: "{{ vpc_name }}"
+    cidr_block: "{{ vpc_cidr_block }}"
+    region: "{{ aws_region }}"
+    state: present
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+  register: vpc
+
+- name:               Set VPC ID in variable
+  set_fact:
+    vpc_id:           "{{ vpc.vpc.id }}"
+
+- name: associate subnet to the VPC
+  ec2_vpc_subnet:
+    state: present
+    vpc_id: "{{ vpc_id }}"
+    region: "{{ aws_region }}"
+    cidr: "{{ subnet_cidr1 }}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    map_public: yes
+  register: subnet1
+
+- name: associate subnet to the VPC
+  ec2_vpc_subnet:
+    state: present
+    vpc_id: "{{ vpc_id }}"
+    region: "{{ aws_region }}"
+    cidr: "{{ subnet_cidr2 }}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    map_public: yes
+  register: subnet2
+
+- name: associate subnet to the VPC
+  ec2_vpc_subnet:
+    state: present
+    vpc_id: "{{ vpc_id }}"
+    region: "{{ aws_region }}"
+    cidr: "{{ subnet_cidr3 }}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    map_public: yes
+  register: subnet3
+
+- name: create IGW
+  ec2_vpc_igw:
+    vpc_id: "{{ vpc_id }}"
+    region: "{{ aws_region }}"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    state: "present"
+    tags:
+      Name: "{{ igw_name }}"
+  register: igw
+
+- name: Route IGW
+  ec2_vpc_route_table:
+      vpc_id: "{{ vpc_id }}"
+      region: "{{ aws_region }}"
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}"
+      subnets:
+        - "{{ subnet1.subnet.id }}"
+        - "{{ subnet2.subnet.id }}"
+        - "{{ subnet3.subnet.id }}"
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: "{{ igw.gateway_id  }}"
+      tags:
+        Name: "Route_Table"
+
+- name: Create Security Group
+  ec2_group:
+      name: Web DMZ
+      description: DMZ Security Group
+      vpc_id: "{{ vpc_id }}"
+      region: "{{ aws_region }}"
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}"
+      rules:
+        - proto: tcp
+          ports:
+            - 80
+          cidr_ip: 0.0.0.0/0
+        - proto: tcp
+          ports:
+            - 22
+          cidr_ip: 0.0.0.0/0
+        - proto: tcp
+          ports:
+            - 443
+          cidr_ip: 0.0.0.0/0
+        - proto: tcp
+          ports:
+            - 8080
+          cidr_ip: 0.0.0.0/0
+  register: security_group
