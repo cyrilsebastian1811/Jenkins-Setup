@@ -108,6 +108,10 @@
       region : "{{ aws_region }}"
   register : keypair
 
+- name: Copy EC2 Private Key locally so it can be later on used to SSH into the instance
+  copy: content="{{ keypair.key.private_key }}" dest={{ ec2_key_directory }}key.ppk mode=400
+  when: keypair.changed == true
+
 
 - name: Create a Ec2 server
   ec2:
