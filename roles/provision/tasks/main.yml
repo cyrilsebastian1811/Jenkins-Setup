@@ -115,6 +115,7 @@
 
 - name: Create a Ec2 server
   ec2:
+      assign_public_ip: "yes"
       aws_access_key: "{{ aws_access_key }}"
       aws_secret_key: "{{ aws_secret_key }}"
       image: ami-04b9e92b5572fa0d1
@@ -123,12 +124,33 @@
       group_id: "{{ security_group.group_id }}"
       vpc_subnet_id: "{{ subnet1.subnet.id }}"
       key_name: "{{ keypair.key.name  }}"
-      count_tag: app
+      count_tag:
+        app: jenkins
       instance_tags:
         app: jenkins
       exact_count: 1
-
       wait: true
-  register : ec2
+  register : Myec2
+
+- name: Add A record for the new EC2 instance IP in Route53.
+  route53:
+    command: create
+    zone: jenkins.csye6225-su19-tanwarp.me.
+    record: jenkins.csye6225-su19-tanwarp.me.
+    type: A
+    ttl: 300
+    value: "{{ Myec2.tagged_instances.0.public_ip }}"
+    wait: true
+    overwrite: true
+
+- name: Add EC2 instance to inventory groups.
+  add_host:
+      name: "jenkins.csye6225-su19-tanwarp.me."
+      groups: "aws,aws_nginx"
+      ansible_ssh_user: ubuntu
+      host_key_checking: false
+  when: Myec2.tagged_instances.0.id is defined
+
+
 
 
