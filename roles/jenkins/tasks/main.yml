@@ -1,0 +1,5 @@
+- name: Download Java
+  command: "sudo add-apt-repository ppa:webupd8team/java -y"
+
+- name: Install Java
+  command: "sudo apt install oracle-java8-installer"
