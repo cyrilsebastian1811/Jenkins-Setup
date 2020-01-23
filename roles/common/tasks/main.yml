@@ -99,3 +99,36 @@
             - 8080
           cidr_ip: 0.0.0.0/0
   register: security_group
+
+- name: Create a new Ec2 key pair
+  ec2_key:
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}"
+      name: ec2_keypair
+      region : "{{ aws_region }}"
+  register : keypair
+
+- name: Copy EC2 Private Key locally so it can be later on used to SSH into the instance
+  copy: content="{{ keypair.key.private_key }}" dest={{ ec2_key_directory }}key.ppk mode=400
+  when: keypair.changed == true
+
+
+- name: Create a Ec2 server
+  ec2:
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}"
+      image: ami-04b9e92b5572fa0d1
+      instance_type : t2.micro
+      region : "{{aws_region}}"
+      group_id: "{{ security_group.group_id }}"
+      vpc_subnet_id: "{{ subnet1.subnet.id }}"
+      key_name: "{{ keypair.key.name  }}"
+      count_tag: app
+      instance_tags:
+        app: jenkins
+      exact_count: 1
+
+      wait: true
+  register : ec2
+
+
