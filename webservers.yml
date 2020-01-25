@@ -1,3 +1,9 @@
 - hosts: local
   roles:
-    - common
+    - provision
+
+- hosts: launched
+  gather_facts: true
+  become: true
+  roles:
+    - jenkins
