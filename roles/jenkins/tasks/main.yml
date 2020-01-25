@@ -1,5 +1,21 @@
 - name: Download Java
-  command: "sudo add-apt-repository ppa:webupd8team/java -y"
+  command: "sudo apt-get update"
 
 - name: Install Java
-  command: "sudo apt install oracle-java8-installer"
+  command: "sudo apt install openjdk-8-jdk -y"
+
+- name: Get Jenkins
+  command: "wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add"
+
+- name: Add Repo
+  command: "sudo apt-add-repository 'deb http://pkg.jenkins-ci.org/debian binary/'"
+
+- name: Install Jenkins
+  command: "sudo apt install jenkins -y"
+
+- name: Add Cerbot Repo
+  command: "sudo add-apt-repository ppa:certbot/certbot -y"
+
+- name: Install Cerbot
+  command: "sudo apt install -y nginx python-certbot-nginx"
+

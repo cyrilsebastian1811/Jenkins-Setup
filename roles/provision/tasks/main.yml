@@ -46,6 +46,9 @@
     map_public: yes
   register: subnet3
 
+  - debug:
+    var: subnet3
+
 - name: create IGW
   ec2_vpc_igw:
     vpc_id: "{{ vpc_id }}"
@@ -124,6 +127,7 @@
       group_id: "{{ security_group.group_id }}"
       vpc_subnet_id: "{{ subnet1.subnet.id }}"
       key_name: "{{ keypair.key.name  }}"
+      keypair: "centos"
       count_tag:
         app: jenkins
       instance_tags:
@@ -143,13 +147,22 @@
     wait: true
     overwrite: true
 
-- name: Add EC2 instance to inventory groups.
+
+- name: Add new instance to host group
   add_host:
-      name: "jenkins.csye6225-su19-tanwarp.me."
-      groups: "aws,aws_nginx"
+      hostname: "{{ item.public_ip }}"
+      groupname: launched
       ansible_ssh_user: ubuntu
-      host_key_checking: false
-  when: Myec2.tagged_instances.0.id is defined
+  loop: "{{ Myec2.instances }}"
+
+- name: Let's wait for SSH to come up. Usually that takes ~10 seconds
+  local_action: wait_for
+    host={{ item.public_ip }}
+    port=22
+    state=started
+  with_items: '{{ Myec2.instances }}'
+
+
 
 
 
