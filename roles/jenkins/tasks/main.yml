@@ -1,0 +1,6 @@
+- name: Download Java
+  command: "sudo apt-get update"
+
+- name: Install Java
+  command: "sudo apt install openjdk-8-jdk -y"
+
