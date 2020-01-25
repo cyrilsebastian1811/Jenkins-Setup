@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="214e82d6-047f-4db4-a302-9f9b69501003" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/roles/testa/defaults/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/files/bar.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/files/foo.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/handlers/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/meta/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/tasks/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/templates/ntp.conf.j2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/vars/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production" beforeDir="false" afterPath="$PROJECT_DIR$/production" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/roles/common/defaults/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/common/defaults/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/roles/common/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/common/tasks/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservers.yml" beforeDir="false" afterPath="$PROJECT_DIR$/webservers.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +50,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/roles" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,6 +64,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/roles" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -78,12 +94,21 @@
       <updated>1579632211585</updated>
       <workItem from="1579632213256" duration="6532000" />
       <workItem from="1579729005269" duration="2479000" />
-      <workItem from="1579744645263" duration="2326000" />
+      <workItem from="1579744645263" duration="11225000" />
+      <workItem from="1579818363751" duration="5895000" />
+      <workItem from="1579829405930" duration="8358000" />
+      <workItem from="1579989655634" duration="303000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="221" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579840716436">
+      <screen x="67" y="27" width="1373" height="873" />
+    </state>
+    <state x="221" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1373.873@67.27.1373.873" timestamp="1579840716436" />
   </component>
   <component name="masterDetails">
     <states>
