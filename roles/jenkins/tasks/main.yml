@@ -1,6 +1,44 @@
-- name: Download Java
-  command: "sudo apt-get update"
+---
+-
+  apt:
+    update_cache: true
+  become: true
+  name: "Update APT package manager repositories cache"
+-
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: true
+  name: "Install OpenJDK Java"
+  with_items: openjdk-8-jdk
+-
+  apt_key: "url=https://pkg.jenkins.io/debian-stable/jenkins.io.key state=present"
+  become: true
+  name: "ensure the jenkins apt repository key is installed"
+-
+  apt_repository: "repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present"
+  become: true
+  name: "ensure the repository is configured"
+-
+  apt: "name=jenkins update_cache=yes"
+  become: true
+  name: "ensure jenkins is installed"
+-
+  name: "ensure jenkins is running"
+  service: "name=jenkins state=started"
 
-- name: Install Java
-  command: "sudo apt install openjdk-8-jdk -y"
 
+
+-
+  apt_repository: repo='ppa:certbot/certbot'
+  become: true
+  name : "Install certbot"
+
+
+-
+  apt:
+   name: "{{ item }}"
+   update_cache: yes
+  with_items:
+        - nginx
+        - python-certbox-nginx
