@@ -46,8 +46,7 @@
     map_public: yes
   register: subnet3
 
-  - debug:
-    var: subnet3
+
 
 - name: create IGW
   ec2_vpc_igw:
@@ -103,18 +102,6 @@
           cidr_ip: 0.0.0.0/0
   register: security_group
 
-- name: Create a new Ec2 key pair
-  ec2_key:
-      aws_access_key: "{{ aws_access_key }}"
-      aws_secret_key: "{{ aws_secret_key }}"
-      name: ec2_keypair
-      region : "{{ aws_region }}"
-  register : keypair
-
-- name: Copy EC2 Private Key locally so it can be later on used to SSH into the instance
-  copy: content="{{ keypair.key.private_key }}" dest={{ ec2_key_directory }}key.ppk mode=400
-  when: keypair.changed == true
-
 
 - name: Create a Ec2 server
   ec2:
@@ -126,26 +113,14 @@
       region : "{{aws_region}}"
       group_id: "{{ security_group.group_id }}"
       vpc_subnet_id: "{{ subnet1.subnet.id }}"
-      key_name: "{{ keypair.key.name  }}"
-      keypair: "centos"
+      keypair: my_keypair
+      exact_count: 1
       count_tag:
         app: jenkins
       instance_tags:
         app: jenkins
-      exact_count: 1
       wait: true
   register : Myec2
-
-- name: Add A record for the new EC2 instance IP in Route53.
-  route53:
-    command: create
-    zone: jenkins.csye6225-su19-tanwarp.me.
-    record: jenkins.csye6225-su19-tanwarp.me.
-    type: A
-    ttl: 300
-    value: "{{ Myec2.tagged_instances.0.public_ip }}"
-    wait: true
-    overwrite: true
 
 
 - name: Add new instance to host group
@@ -167,3 +142,18 @@
 
 
 
+- name: Add new instance to host group
+  add_host:
+    groupname: launched
+    hostname: "{{ item.public_ip }}"
+    ansible_ssh_user: ubuntu
+    host_key_checking: false
+  loop: "{{ Myec2.instances }}"
+
+
+- name: Let's wait for SSH to come up. Usually that takes ~10 seconds
+  local_action: wait_for
+    host={{ item.public_ip }}
+    port=22
+    state=started
+  with_items: '{{ Myec2.instances }}'

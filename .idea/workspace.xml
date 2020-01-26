@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="214e82d6-047f-4db4-a302-9f9b69501003" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/roles/testa/defaults/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/files/bar.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/files/foo.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/handlers/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/meta/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/tasks/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/templates/ntp.conf.j2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roles/testa/vars/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/production" beforeDir="false" afterPath="$PROJECT_DIR$/production" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/common/defaults/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/common/defaults/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/common/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/common/tasks/main.yml" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/roles/jenkins/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/jenkins/tasks/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/roles/provision/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/provision/tasks/main.yml" afterDir="false" />
+>>>>>>> d9fa9b7d0806bcb1d02a80ff73497117d4ee81cd
       <change beforePath="$PROJECT_DIR$/webservers.yml" beforeDir="false" afterPath="$PROJECT_DIR$/webservers.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -168,7 +182,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+=======
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+>>>>>>> d9fa9b7d0806bcb1d02a80ff73497117d4ee81cd
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
@@ -201,6 +219,11 @@
       </list>
     </option>
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/roles" />
+    </key>
+  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -225,11 +248,18 @@
       <updated>1579632211585</updated>
       <workItem from="1579632213256" duration="6532000" />
       <workItem from="1579729005269" duration="2479000" />
+<<<<<<< HEAD
+      <workItem from="1579744645263" duration="11225000" />
+      <workItem from="1579818363751" duration="5895000" />
+      <workItem from="1579829405930" duration="8358000" />
+      <workItem from="1579989655634" duration="303000" />
+=======
       <workItem from="1579744645263" duration="2326000" />
       <workItem from="1579807191245" duration="8964000" />
       <workItem from="1579818542861" duration="5575000" />
       <workItem from="1579836316726" duration="8541000" />
       <workItem from="1579978646003" duration="2327000" />
+>>>>>>> d9fa9b7d0806bcb1d02a80ff73497117d4ee81cd
     </task>
     <servers />
   </component>
@@ -273,6 +303,13 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
+  <component name="WindowStateProjectService">
+    <state x="221" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579840716436">
+      <screen x="67" y="27" width="1373" height="873" />
+    </state>
+    <state x="221" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1373.873@67.27.1373.873" timestamp="1579840716436" />
+=======
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/roles/provision/tasks/Cerbot.yaml" />
     <entry file="file://$PROJECT_DIR$/roles/provision/defaults/main.yml">
@@ -342,6 +379,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> d9fa9b7d0806bcb1d02a80ff73497117d4ee81cd
   </component>
   <component name="masterDetails">
     <states>

@@ -1,7 +1,7 @@
 ---
   # AWS Credentials
-  aws_access_key: ""
-  aws_secret_key: ""
+  aws_access_key: "AKIAXJ4BMVJQJ5EDQPGU"
+  aws_secret_key: "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"
 
   aws_region:     "us-east-1"
 

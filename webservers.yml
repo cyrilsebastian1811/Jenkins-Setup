@@ -1,8 +1,9 @@
-- hosts: local
+-
+  hosts: local
   roles:
     - provision
-
-- hosts: launched
+-
+  hosts: launched
   gather_facts: true
   become: true
   roles:
