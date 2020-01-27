@@ -1,44 +1,102 @@
 ---
--
+- name: update apt package manager repositories cache
   apt:
     update_cache: true
   become: true
-  name: "Update APT package manager repositories cache"
--
+
+- name: install openjdk
   apt:
-    name: "{{ item }}"
-    state: present
+    name: openjdk-8-jdk
+    state: latest
+    update_cache: true
   become: true
-  name: "Install OpenJDK Java"
-  with_items: openjdk-8-jdk
--
-  apt_key: "url=https://pkg.jenkins.io/debian-stable/jenkins.io.key state=present"
+
+- name: ensure the jenkins apt repository key is installed
+  apt_key:
+   url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+   state: present
   become: true
-  name: "ensure the jenkins apt repository key is installed"
--
-  apt_repository: "repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present"
+
+- name: ensure the repository is configured
+  apt_repository:
+   repo: deb https://pkg.jenkins.io/debian-stable binary/
+   state: present
   become: true
-  name: "ensure the repository is configured"
--
-  apt: "name=jenkins update_cache=yes"
-  become: true
-  name: "ensure jenkins is installed"
--
-  name: "ensure jenkins is running"
-  service: "name=jenkins state=started"
 
-
-
--
-  apt_repository: repo='ppa:certbot/certbot'
-  become: true
-  name : "Install certbot"
-
-
--
+- name: ensure jenkins is installed
   apt:
-   name: "{{ item }}"
-   update_cache: yes
-  with_items:
-        - nginx
-        - python-certbox-nginx
+    name: jenkins
+  become: true
+
+- name: ensure jenkins is running
+  service:
+   name: jenkins
+   state: started
+  become: true
+
+- name : add cerbot repository
+  apt_repository:
+   repo: ppa:certbot/certbot
+   state: present
+  become: true
+
+- name: intsall nginx
+  apt:
+    name: nginx
+    state: latest
+  become: true
+
+- name: intsall python-certbot-nginx
+  apt:
+    name: python-certbot-nginx
+    state: latest
+  become: true
+
+- name: Remove file (delete file)
+  file:
+    path:  /etc/nginx/sites-available/default
+    state: absent
+  become: true
+
+- name: set up nginx configuration block
+  blockinfile:
+    path:  /etc/nginx/sites-available/default
+    create: yes
+    block: |
+      upstream jenkins {
+        server 127.0.0.1:8080 fail_timeout=0;
+      }
+
+      server {
+              listen 80 default_server;
+              listen [::]:80 default_server;
+
+              root /var/www/html;
+              index index.html index.htm index.nginx-debian.html;
+
+              server_name {{ domain_name }};
+
+              location / {
+                      proxy_set_header        Host $host:$server_port;
+                      proxy_set_header        X-Real-IP $remote_addr;
+                      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+                      proxy_set_header        X-Forwarded-Proto $scheme;
+                      proxy_set_header        Upgrade $http_upgrade;
+                      proxy_set_header        Connection "upgrade";
+                      proxy_pass              http://jenkins;
+              }
+      }
+  become: true
+
+- name: set up nginx files
+  command: sudo nginx -t
+
+- name: restart jenkins
+  service:
+    name: nginx
+    state: restarted
+  become: true
+
+- name: create letsencrypt certificate
+  command: sudo certbot --nginx -m {{ letsencrypt_email }} -d {{ domain_name }} --agree-tos --staging --renew-with-new-domains ---keep-until-expiring --redirect
+
