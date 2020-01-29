@@ -98,5 +98,5 @@
   become: true
 
 - name: create letsencrypt certificate
-  command: sudo certbot --nginx -m {{ letsencrypt_email }} -d {{ domain_name }} --agree-tos --staging --renew-with-new-domains ---keep-until-expiring --redirect
+  command: sudo certbot --nginx -m {{ letsencrypt_email }} -d {{ domain_name }} --agree-tos --reinstall --redirect --staging
 
