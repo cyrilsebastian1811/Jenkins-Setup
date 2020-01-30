@@ -1,400 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="214e82d6-047f-4db4-a302-9f9b69501003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/roles/testa/defaults/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/testa/files/bar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/testa/files/foo.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/testa/handlers/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/testa/meta/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/testa/tasks/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/testa/templates/ntp.conf.j2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/roles/testa/vars/main.yml" afterDir="false" />
+    <list default="true" id="01fe37cb-c045-45bd-9849-fd0473625dc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/roles/vpcec2/vars/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/production" beforeDir="false" afterPath="$PROJECT_DIR$/production" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/common/defaults/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/common/defaults/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/common/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/common/tasks/main.yml" afterDir="false" />
-=======
+      <change beforePath="$PROJECT_DIR$/dbservers.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production" beforeDir="false" afterPath="$PROJECT_DIR$/development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/jenkins/defaults/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/jenkins/defaults/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/roles/jenkins/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/jenkins/tasks/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roles/provision/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/provision/tasks/main.yml" afterDir="false" />
->>>>>>> d9fa9b7d0806bcb1d02a80ff73497117d4ee81cd
-      <change beforePath="$PROJECT_DIR$/webservers.yml" beforeDir="false" afterPath="$PROJECT_DIR$/webservers.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/provision/defaults/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/vpcec2/defaults/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/provision/files/bar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/roles/vpcec2/files/bar.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/provision/files/foo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/roles/vpcec2/files/foo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/provision/handlers/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/vpcec2/handlers/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/provision/meta/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/vpcec2/meta/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/provision/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/vpcec2/tasks/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/provision/templates/ntp.conf.j2" beforeDir="false" afterPath="$PROJECT_DIR$/roles/vpcec2/templates/ntp.conf.j2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/provision/vars/main.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/roles/shutdown/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/roles/shutdown/tasks/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shut.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aws_vpc_ec2_teardown.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staging" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webservers.yml" beforeDir="false" afterPath="$PROJECT_DIR$/aws_vpc_ec2_setup.yml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/roles/provision/tasks/main.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1421">
-              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/group_vars/group1.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webservers.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/roles/jenkins/defaults/main.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbservers.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/production">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/roles/jenkins/tasks/main.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/roles/common/tasks/main.yml" />
-        <option value="$PROJECT_DIR$/roles/common/tasks/Cerbot.yaml" />
-        <option value="$PROJECT_DIR$/dbservers.yml" />
-        <option value="$PROJECT_DIR$/webservers.yml" />
-        <option value="$PROJECT_DIR$/roles/jenkins/tasks/main.yml" />
-        <option value="$PROJECT_DIR$/roles/provision/tasks/main.yml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="134" />
-    <option name="y" value="81" />
-    <option name="width" value="1786" />
-    <option name="height" value="999" />
-  </component>
-  <component name="ProjectId" id="1WlfFqzGpcVcZg9FYsRev7YSRQh" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="infrastructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infrastructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infrastructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="jenkins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infrastructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="jenkins" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infrastructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="jenkins" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infrastructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="provision" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infrastructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="provision" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="infrastructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="provision" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
+  <component name="ProjectId" id="1X5nLC5RbbdvVIhByuqZqQfdQBC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-<<<<<<< HEAD
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-=======
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
->>>>>>> d9fa9b7d0806bcb1d02a80ff73497117d4ee81cd
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="go.gopath.indexing.explicitly.defined" value="true" />
-    <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/roles" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/roles" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/roles" />
-    </key>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="214e82d6-047f-4db4-a302-9f9b69501003" name="Default Changelist" comment="" />
-      <created>1579632211585</created>
+      <changelist id="01fe37cb-c045-45bd-9849-fd0473625dc8" name="Default Changelist" comment="" />
+      <created>1580344764578</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1579632211585</updated>
-      <workItem from="1579632213256" duration="6532000" />
-      <workItem from="1579729005269" duration="2479000" />
-<<<<<<< HEAD
-      <workItem from="1579744645263" duration="11225000" />
-      <workItem from="1579818363751" duration="5895000" />
-      <workItem from="1579829405930" duration="8358000" />
-      <workItem from="1579989655634" duration="303000" />
-=======
-      <workItem from="1579744645263" duration="2326000" />
-      <workItem from="1579807191245" duration="8964000" />
-      <workItem from="1579818542861" duration="5575000" />
-      <workItem from="1579836316726" duration="8541000" />
-      <workItem from="1579978646003" duration="2327000" />
->>>>>>> d9fa9b7d0806bcb1d02a80ff73497117d4ee81cd
+      <updated>1580344764578</updated>
+      <workItem from="1580344768586" duration="5165000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26135000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="134" y="35" width="2426" height="1405" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2724551" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.7778753" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-<<<<<<< HEAD
   <component name="WindowStateProjectService">
-    <state x="221" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579840716436">
-      <screen x="67" y="27" width="1373" height="873" />
+    <state x="541" y="127" width="837" height="825" key="find.popup" timestamp="1580348694999">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="221" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1373.873@67.27.1373.873" timestamp="1579840716436" />
-=======
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/roles/provision/tasks/Cerbot.yaml" />
-    <entry file="file://$PROJECT_DIR$/roles/provision/defaults/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/group_vars/group2.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/host_vars/hostname1.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/host_vars/hostname2.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/roles/jenkins/meta/main.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/production">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/group_vars/group1.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbservers.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservers.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/roles/jenkins/defaults/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/roles/provision/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1421">
-          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/roles/jenkins/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
->>>>>>> d9fa9b7d0806bcb1d02a80ff73497117d4ee81cd
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <state x="541" y="127" width="837" height="825" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1580348694999" />
   </component>
 </project>
