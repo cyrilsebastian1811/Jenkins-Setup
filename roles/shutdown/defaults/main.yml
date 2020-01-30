@@ -5,3 +5,7 @@ subnet_name : "mysubnet"
 subnet_cidr1: 11.10.0.0/24
 subnet_cidr2: 11.10.1.0/24
 subnet_cidr3: 11.10.2.0/24
+
+aws_access_key: ""
+aws_secret_key: ""
+region: "us-east-1"
