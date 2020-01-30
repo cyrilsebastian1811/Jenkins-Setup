@@ -27,16 +27,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 - ec2_vpc_net_info:
     aws_access_key: "{{ aws_access_key }}"
     aws_secret_key: "{{ aws_secret_key }}"
