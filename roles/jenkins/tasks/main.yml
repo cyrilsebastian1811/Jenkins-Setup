@@ -98,4 +98,9 @@
   become: true
 
 - name: create letsencrypt certificate
-  command: sudo certbot --nginx -m {{ letsencrypt_email }} -d {{ domain_name }} --agree-tos --reinstall --redirect --staging
+  command: "sudo certbot --nginx -m {{ letsencrypt_email }} -d {{ domain_name }} --agree-tos --reinstall --redirect --staging"
+  when: staging_cert|bool == true
+
+- name: create letsencrypt certificate
+  command: "sudo certbot --nginx -m {{ letsencrypt_email }} -d {{ domain_name }} --agree-tos --reinstall --redirect"
+  when: staging_cert|bool == false
