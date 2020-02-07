@@ -117,6 +117,17 @@
 - debug:
     var: docker_registery_info
 
+- name: Docker Installation - repository installation
+  shell: |
+    sudo apt-get update
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+    sudo apt install -y gnupg2 pass
+    sudo groupadd docker
+    sudo usermod -aG docker jenkins
+  register: docker_registery_installation_info
+- debug:
+    var: docker_registery_installation_info
+
 # - name: Docker Installation - repository installation
 #   shell: |
 #     sudo apt-get update
@@ -124,20 +135,7 @@
 #     sudo chmod 777 /var/run/docker.sock
 #     sudo apt install -y gnupg2 pass
 #     sudo usermod -a -G docker jenkins
+#     sudo newgrp docker
 #   register: docker_registery_installation_info
 # - debug:
 #     var: docker_registery_installation_info
-
-- name: Docker Installation - repository installation
-  shell: |
-    sudo apt-get update
-    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-    sudo groupadd docker
-    sudo usermod -aG docker jenkins
-    sudo newgrp docker
-    echo $USER
-    exit
-    echo $USER
-  register: docker_registery_installation_info
-- debug:
-    var: docker_registery_installation_info
