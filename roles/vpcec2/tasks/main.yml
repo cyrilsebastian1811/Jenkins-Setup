@@ -93,8 +93,7 @@
   ec2:
       assign_public_ip: "yes"
       image: ami-04b9e92b5572fa0d1
-      # instance_type : t2.micro
-      instance_type : "{{instance_size}}"
+      instance_type : t2.small
       region : "{{ region }}"
       group_id: "{{ security_group.group_id }}"
       vpc_subnet_id: "{{ subnet1.subnet.id }}"
