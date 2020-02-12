@@ -2,7 +2,7 @@
 
   # VPC Information
   vpc_name:       "MyVPC"
-  vpc_cidr_block: "11.10.0.0/16"
+  vpc_cidr_block: 10.0.0.0/16
 
   region : "us-east-1"
 
@@ -14,5 +14,4 @@
 
   # Internet Gateway Name
   igw_name: "Traffic IGW"
-
 
