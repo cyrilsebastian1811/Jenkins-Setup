@@ -9,7 +9,7 @@
 
 - name: set VPC ID in variable
   set_fact:
-    vpc_id:           "{{ vpc.vpc.id }}"
+    vpc_id: "{{ vpc.vpc.id }}"
 
 - name: associate subnet to the VPC
   ec2_vpc_subnet:
