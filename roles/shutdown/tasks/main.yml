@@ -3,9 +3,14 @@
 - name: 'gather all the ec2 instance'
   ec2_instance_info:
     filters:
-      {tag-key: "{{key}}", tag-value: "{{value}}"}
+      {tag-key: "{{key}}", tag-value: "{{value}}", "instance-state-name": running}
   register: ec2
 
+- name: De-associate public ip
+  ec2_eip:
+    device_id: "{{ ec2.instances[0].instance_id }}"
+    ip: "{{ elastic_ip }}"
+    state: absent
 
 - name: 'Terminate EC2 Instance(s)'
   ec2:

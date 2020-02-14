@@ -83,10 +83,9 @@
           cidr_ip: 0.0.0.0/0
   register: security_group
 
-
 - name: Create a Ec2 server
   ec2:
-      assign_public_ip: "yes"
+      assign_public_ip: "no"
       image: ami-04b9e92b5572fa0d1
       instance_type : "{{ ec2_instance_size }}"
       group_id: "{{ security_group.group_id }}"
@@ -100,6 +99,18 @@
       wait: true
   register : Myec2
 
+- name: Get details of ec2 instance
+  ec2_instance_info:
+    filters:
+      "tag:app": jenkins
+      "instance-state-name": running
+  register: ec2_jenkins
+
+- name: Associate public ip
+  ec2_eip:
+    device_id: "{{ ec2_jenkins.instances[0].instance_id }}"
+    ip: "{{ elastic_ip }}"
+
 - name: Add A record for the new EC2 instance IP in Route53.
   route53:
     command: create
@@ -107,37 +118,31 @@
     record: "{{route53_record_name}}"
     type: A
     ttl: 60
-    value: "{{ item.public_ip }}"
+    value: "{{ elastic_ip }}"
     wait: true
     overwrite: true
-  with_items: '{{ Myec2.instances }}'
 
 - name: Add new instance to host group
   add_host:
-      hostname: "{{ item.public_ip }}"
+      hostname: "{{ elastic_ip }}"
       groupname: launched
       ansible_ssh_user: ubuntu
-  loop: "{{ Myec2.instances }}"
 
 - name: Let's wait for SSH to come up. Usually that takes ~10 seconds
   local_action: wait_for
-    host={{ item.public_ip }}
+    host={{ elastic_ip }}
     port=22
     state=started
-  with_items: '{{ Myec2.instances }}'
 
 - name: Add new instance to host group
   add_host:
     groupname: launched
-    hostname: "{{ item.public_ip }}"
+    hostname: "{{ elastic_ip }}"
     ansible_ssh_user: ubuntu
     host_key_checking: false
-  loop: "{{ Myec2.instances }}"
-
 
 - name: Let's wait for SSH to come up. Usually that takes ~10 seconds
   local_action: wait_for
-    host={{ item.public_ip }}
+    host={{ elastic_ip }}
     port=22
     state=started
-  with_items: '{{ Myec2.instances }}'
