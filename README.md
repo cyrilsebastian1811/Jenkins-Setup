@@ -1,7 +1,7 @@
 # Project Information
 Infrastructure Setup:
-1. k8s cluster setup with metrics server pre-installed
-2. Jenkins server with SSL using Let's Encrypt
+  1. k8s cluster setup with metrics server pre-installed
+  2. Jenkins server with SSL using Let's Encrypt
 
 # Team information
 
